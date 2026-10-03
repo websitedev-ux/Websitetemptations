@@ -7,8 +7,8 @@ const CONFIG = {
   // email app (mailto:). See README.md for options (your own server, Formspree, etc.).
   // If you add a third-party form processor, list it in privacy.html → "Service providers".
   formEndpoint: "",
-  contactEmail: "hello@example.com",   // ← replace with your real business email
-  privacyEmail: "privacy@example.com", // ← replace with your real privacy email
+  contactEmail: "scottyshopstore@gmail.com",
+  privacyEmail: "scottyshopstore@gmail.com",
   policyVersion: "2026-10-01"
 };
 /* ================================================== */

@@ -11,10 +11,9 @@ node tools/dev-server.js
 Then open http://localhost:5173. To publish, upload the whole folder (except `src/` and `tools/`) to any static host, such as Netlify, Cloudflare Pages, GitHub Pages or your own server.
 
 ## Before you launch: checklist
-1. **Business details.** Replace every highlighted `[placeholder]`. They are in
-   `src/template.html` (footer) and in `src/pages/*.html`. Search for `placeholder`.
-2. **Emails.** Replace `hello@example.com` and `privacy@example.com` everywhere,
-   including the `CONFIG` block at the top of `assets/main.js`.
+1. **Business details.** Done. The footer shows your Gmail, phone and hours.
+2. **Emails.** Done. Every contact link uses scottyshopstore@gmail.com. To change it later,
+   search for that address in `src/` and in the `CONFIG` block of `assets/main.js`.
 3. **Prices.** Set your real package prices in `src/pages/index.html`, in both the pricing
    cards and the package dropdown.
 4. **Form delivery.** By default the forms open the visitor's email app (mailto).
