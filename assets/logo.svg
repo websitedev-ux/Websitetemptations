@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Website Temptations monogram">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E8B08A"/>
+      <stop offset=".5" stop-color="#D08A5E"/>
+      <stop offset="1" stop-color="#A9603C"/>
+    </linearGradient>
+    <linearGradient id="r" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E58BB5"/>
+      <stop offset="1" stop-color="#A33A6E"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="6" fill="#0E0E10"/>
+  <path d="M32 4 60 32 32 60 4 32Z" fill="none" stroke="url(#g)" stroke-width="2"/>
+  <path d="M32 10 54 32 32 54 10 32Z" fill="none" stroke="url(#r)" stroke-width="1"/>
+  <text x="32" y="39" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="600" fill="url(#g)" letter-spacing="1">WT</text>
+</svg>

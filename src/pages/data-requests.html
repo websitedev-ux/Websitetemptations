@@ -1,0 +1,63 @@
+<!-- title: Delete or Access My Data | desc: Ask Website Temptations to delete, correct, or give you a copy of your personal data. -->
+<article class="legal">
+  <div class="container">
+    <header class="legal-hero">
+    <p class="eyebrow">Your rights</p>
+    <h1>Delete or access my data</h1>
+    </header>
+    <p>You can ask us to delete your personal data, give you a copy of it, correct it, or stop using it for marketing. It’s free, and we reply within <strong>30 days</strong>. We will only ask for extra information if we need it to confirm who you are.</p>
+    <p>Prefer email? Write to <a href="mailto:privacy@example.com">privacy@example.com</a> and it will be handled exactly the same way.</p>
+
+    <form id="privacy-form" novalidate style="margin-top:2rem">
+      <div class="field-row">
+        <div class="field">
+          <label for="pr-name">Your name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="pr-name" name="name" autocomplete="name" required aria-required="true" aria-describedby="pr-name-error">
+          <p class="error-msg" id="pr-name-error" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="pr-email">Email you used with us <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="pr-email" name="email" autocomplete="email" required aria-required="true" aria-describedby="pr-email-error">
+          <p class="error-msg" id="pr-email-error" role="alert"></p>
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>What would you like us to do? <span class="req" aria-hidden="true">*</span></legend>
+        <div class="check"><input type="radio" id="pr-delete" name="request_type" value="delete my data" required aria-describedby="pr-delete-error"><label for="pr-delete">Delete my personal data</label></div>
+        <div class="check"><input type="radio" id="pr-access" name="request_type" value="send me a copy"><label for="pr-access">Send me a copy of my data</label></div>
+        <div class="check"><input type="radio" id="pr-correct" name="request_type" value="correct my data"><label for="pr-correct">Correct my data</label></div>
+        <div class="check"><input type="radio" id="pr-unsub" name="request_type" value="stop marketing"><label for="pr-unsub">Stop all marketing emails</label></div>
+        <div class="check"><input type="radio" id="pr-child" name="request_type" value="delete a child's data"><label for="pr-child">Delete data about a child in my care</label></div>
+        <p class="error-msg" id="pr-delete-error" role="alert"></p>
+      </fieldset>
+
+      <div class="field">
+        <label for="pr-details">Anything else we should know? <span class="hint">Optional. For example, what to correct.</span></label>
+        <textarea id="pr-details" name="details" style="min-height:110px"></textarea>
+      </div>
+
+      <div class="check">
+        <input type="checkbox" id="pr-consent" name="privacy_consent" value="yes" required aria-required="true" aria-describedby="pr-consent-error">
+        <label for="pr-consent">I understand Website Temptations will use these details only to handle this request and keep a record that it was completed. <span class="req" aria-hidden="true">*</span></label>
+      </div>
+      <p class="error-msg" id="pr-consent-error" role="alert"></p>
+
+      <div aria-hidden="true" style="position:absolute;left:-9999px">
+        <label for="pr-hp">Leave this empty</label>
+        <input type="text" id="pr-hp" name="website_hp" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="margin-top:1rem">Send data request</button>
+      <div class="form-status" role="status" aria-live="polite"></div>
+    </form>
+
+    <h2>What happens next</h2>
+    <ol>
+      <li>We confirm we’ve received your request within 5 business days.</li>
+      <li>We check it’s really you, usually by replying to the email address you gave.</li>
+      <li>We complete your request within 30 days and tell you when it’s done.</li>
+    </ol>
+    <p>When you ask us to delete your data, we delete it from our systems and ask our service providers to do the same. The only exception is anything the law requires us to keep, such as invoices. If that applies, we tell you what we kept and why. We keep a minimal record that your request was completed, so that we can prove we met it.</p>
+  </div>
+</article>

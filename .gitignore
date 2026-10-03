@@ -1,0 +1,17 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Dependencies and logs (none today, but just in case)
+node_modules/
+npm-debug.log*
+*.log
+
+# Personal Claude Code settings (shared launch.json stays tracked)
+.claude/settings.local.json

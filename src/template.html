@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}} | Website Temptations</title>
+  <meta name="description" content="{{desc}}">
+  <meta name="theme-color" content="#182F47">
+  <meta name="color-scheme" content="dark light">
+  <!-- Pick the saved theme before the page paints (no flash). Order: your choice → your device setting → dark. -->
+  <script>
+    (function () {
+      var t = "dark";
+      try { t = localStorage.getItem("wt_theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (e) {}
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <!-- Fonts: Cormorant Garamond & Montserrat, both SIL Open Font License 1.1 (see credits.html).
+       Served by Google Fonts — disclosed in privacy.html. To avoid any third-party request, self-host them (README). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div id="live-region" class="visually-hidden" aria-live="polite"></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Website Temptations — home">
+      <img src="assets/logo.svg" alt="" width="40" height="40">
+      <span class="brand-name">Website Temptations<small>Bespoke Web Studio</small></span>
+    </a>
+    <nav id="primary-nav" class="primary-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html#services"{{nav:services}}>Services</a></li>
+        <li><a href="work.html"{{nav:work}}>Our Work</a></li>
+        <li><a href="index.html#process"{{nav:process}}>Process</a></li>
+        <li><a href="index.html#pricing"{{nav:pricing}}>Pricing</a></li>
+        <li><a href="index.html#faq"{{nav:faq}}>FAQ</a></li>
+        <li><a href="index.html#request" class="btn btn-primary">Get Started</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-pressed="false" data-theme-toggle>
+        <span class="visually-hidden">Light mode</span>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+{{body}}
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h2>Website Temptations</h2>
+        <!-- BUSINESS DETAILS — replace every highlighted placeholder before launch -->
+        <address>
+          <span class="placeholder">[Legal business name, e.g. Website Temptations LLC]</span><br>
+          <span class="placeholder">[Street address]</span><br>
+          <span class="placeholder">[City, State/Region, Postcode, Country]</span><br>
+          Business registration no.: <span class="placeholder">[number]</span><br>
+          Email: <a href="mailto:hello@example.com">hello@example.com</a><br>
+          Phone: <span class="placeholder">[phone number]</span><br>
+          Hours: Monday–Friday, 9:00–17:00 <span class="placeholder">[time zone]</span>
+        </address>
+      </div>
+      <div>
+        <h2>Legal</h2>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="refunds.html">Refund Policy</a></li>
+          <li><a href="cookies.html">Cookie Policy</a></li>
+          <li><button type="button" class="link-btn" data-open-cookie-settings>Cookie Settings</button></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Your Rights</h2>
+        <ul>
+          <li><a href="data-requests.html">Delete or Access My Data</a></li>
+          <li><a href="accessibility.html">Accessibility Statement</a></li>
+          <li><a href="credits.html">Licences &amp; Third Parties</a></li>
+          <li><a href="work.html">Our Work</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span data-year>2026</span> Website Temptations. All rights reserved.</p>
+      <p>No tracking · No hidden fees · No fake reviews</p>
+    </div>
+  </div>
+</footer>
+
+<section id="cookie-banner" class="cookie-banner" aria-labelledby="cookie-title" hidden>
+  <h2 id="cookie-title" tabindex="-1">Your cookie choices</h2>
+  <p>We only use what the site needs to work. Optional cookies stay <strong>off</strong> unless you turn them on. <a href="cookies.html">Cookie Policy</a></p>
+  <div id="cookie-prefs" class="cookie-prefs" hidden>
+    <div class="check">
+      <input type="checkbox" id="consent-necessary" checked disabled>
+      <label for="consent-necessary"><strong>Necessary</strong> (always on) <span class="hint">Remembers your cookie choice.</span></label>
+    </div>
+    <div class="check">
+      <input type="checkbox" id="consent-preferences">
+      <label for="consent-preferences"><strong>Preferences</strong> <span class="hint">Remembers your settings. Not currently used.</span></label>
+    </div>
+    <div class="check">
+      <input type="checkbox" id="consent-analytics">
+      <label for="consent-analytics"><strong>Analytics</strong> <span class="hint">Anonymous visit statistics. Not currently used.</span></label>
+    </div>
+    <p id="gpc-note" class="hint" hidden>Your browser sent a Global Privacy Control signal, so analytics stays off.</p>
+  </div>
+  <div class="btn-row">
+    <button type="button" class="btn btn-outline" data-cookie="reject">Reject all</button>
+    <button type="button" class="btn btn-outline" data-cookie="accept">Accept all</button>
+    <button type="button" class="btn btn-outline" data-cookie="customize">Customise</button>
+    <button type="button" class="btn btn-primary" data-cookie="save" hidden>Save my choices</button>
+  </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Keep line endings consistent (LF) in the repo on every OS
+* text=auto eol=lf
+
+# Images are binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary

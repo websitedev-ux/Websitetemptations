@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bespoke Websites, Fully Built For You | Website Temptations</title>
+  <meta name="description" content="Tell Website Temptations about the website you want. We design, build and launch it, with a fixed written quote and no hidden fees.">
+  <meta name="theme-color" content="#182F47">
+  <meta name="color-scheme" content="dark light">
+  <!-- Pick the saved theme before the page paints (no flash). Order: your choice → your device setting → dark. -->
+  <script>
+    (function () {
+      var t = "dark";
+      try { t = localStorage.getItem("wt_theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (e) {}
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <!-- Fonts: Cormorant Garamond & Montserrat, both SIL Open Font License 1.1 (see credits.html).
+       Served by Google Fonts — disclosed in privacy.html. To avoid any third-party request, self-host them (README). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div id="live-region" class="visually-hidden" aria-live="polite"></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Website Temptations — home">
+      <img src="assets/logo.svg" alt="" width="40" height="40">
+      <span class="brand-name">Website Temptations<small>Bespoke Web Studio</small></span>
+    </a>
+    <nav id="primary-nav" class="primary-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="work.html">Our Work</a></li>
+        <li><a href="index.html#process">Process</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#request" class="btn btn-primary">Get Started</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-pressed="false" data-theme-toggle>
+        <span class="visually-hidden">Light mode</span>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- ========== HERO ========== -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <p class="eyebrow">Bespoke Web Studio</p>
+      <h1 id="hero-title">Your website,<br><span class="accent-text">beautifully built.</span></h1>
+      <p class="lead">Tell us what you need. We design it, build it and launch it, all for one fixed price.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#request">Request your website <span aria-hidden="true">→</span></a>
+        <a class="btn btn-outline" href="#pricing">See pricing</a>
+      </div>
+      <ul class="trust" aria-label="Our promises">
+        <li>Fixed written quote</li>
+        <li>You own your site</li>
+        <li>No hidden fees</li>
+      </ul>
+    </div>
+
+    <!-- Decorative animation: a website building itself -->
+    <div class="stage reveal" style="--delay:.25s" aria-hidden="true">
+      <div class="browser">
+        <div class="browser-bar"><span></span><span></span><span></span><div class="url">yourbusiness.com</div></div>
+        <div class="browser-body">
+          <div class="b-nav build" style="--i:0"><i class="logo"></i><i></i><i></i><i></i></div>
+          <div class="b-hero">
+            <div>
+              <i class="h1 build" style="--i:1"></i>
+              <i class="h2 build" style="--i:2"></i>
+              <i class="p build" style="--i:3"></i>
+              <i class="p short build" style="--i:3"></i>
+              <i class="cta build" style="--i:4"></i>
+            </div>
+            <i class="img build" style="--i:5"></i>
+          </div>
+          <div class="b-cards"><i class="build" style="--i:6"></i><i class="build" style="--i:7"></i><i class="build" style="--i:8"></i></div>
+        </div>
+      </div>
+
+      <div class="phone">
+        <i class="ph-img"></i><i class="ph-t"></i><i class="ph-p"></i><i class="ph-p" style="width:70%"></i><i class="ph-btn"></i>
+      </div>
+
+      <div class="float-card toast">
+        <span class="dot">✓</span>
+        <span><b>New order received</b><small>Just now</small></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section id="services" class="section-alt" aria-labelledby="services-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">What we build</p>
+      <h2 id="services-title">Made to measure</h2>
+      <p>Every site is designed around your business. You don’t need any technical skills.</p>
+    </div>
+    <div class="grid grid-3">
+      <article class="card reveal">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
+        <h3>Business websites</h3>
+        <p>A polished home for your brand online.</p>
+      </article>
+      <article class="card reveal" style="--delay:.1s">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 4h2l2.5 11h11L21 7H7"/><circle cx="9" cy="19" r="1.3"/><circle cx="17" cy="19" r="1.3"/></svg></div>
+        <h3>Online stores</h3>
+        <p>Products, secure checkout and easy returns.</p>
+      </article>
+      <article class="card reveal" style="--delay:.2s">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+        <h3>Booking sites</h3>
+        <p>Let clients book appointments online, day or night.</p>
+      </article>
+      <article class="card reveal">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg></div>
+        <h3>Portfolios</h3>
+        <p>An elegant showcase for your creative work.</p>
+      </article>
+      <article class="card reveal" style="--delay:.1s">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2l10 10-10 10L2 12z"/></svg></div>
+        <h3>Landing pages</h3>
+        <p>One focused page for a launch or campaign.</p>
+      </article>
+      <article class="card reveal" style="--delay:.2s">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 8a8 8 0 1 0 1 7"/><path d="M21 3v5h-5"/></svg></div>
+        <h3>Redesigns</h3>
+        <p>A fresh, faster version of the site you already have.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BUILT TO PERFORM ========== -->
+<section aria-labelledby="grow-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Built to perform</p>
+      <h2 id="grow-title">A website that works as hard as you do</h2>
+    </div>
+    <ul class="feature-list reveal">
+      <li>
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+        <div><strong>Fast on every device</strong><span>Designed for phones first, then made to look great on large screens too.</span></div>
+      </li>
+      <li>
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></div>
+        <div><strong>Ready to sell</strong><span>Checkout, booking and contact forms, connected and tested.</span></div>
+      </li>
+      <li>
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 20h18M6 16V9M11 16V5M16 16v-5M21 16V7"/></svg></div>
+        <div><strong>See what’s working</strong><span>Optional visitor statistics, set up with a proper consent banner.</span></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== RECENT WORK ========== -->
+<section id="work" aria-labelledby="recent-work-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Recent work</p>
+      <h2 id="recent-work-title">Websites we’ve built</h2>
+      <p>Live sites for real businesses, designed and built by us.</p>
+    </div>
+    <div class="work-grid">
+
+  <article class="work-card reveal" style="--delay:0s">
+    <a class="work-shot" href="https://bljsautodetailing.com/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+      <img src="assets/work/bljs-auto-detailing.jpg" alt="" width="1440" height="900" loading="lazy">
+    </a>
+    <div class="work-body">
+      <p class="work-meta">Business website · Wautoma, Wisconsin</p>
+      <h3>BLJ's Auto Detailing</h3>
+      <p>A bold, dark-and-gold site for a hand-detailing business serving Waushara County, with services, a gallery, reviews and online scheduling.</p>
+      <a class="work-link" href="https://bljsautodetailing.com/" target="_blank" rel="noopener">
+        Visit bljsautodetailing.com <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </article>
+</div>
+    <p class="center reveal" style="margin-top:2.5rem"><a class="btn btn-outline" href="work.html">See all our work <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+
+<!-- ========== PROCESS ========== -->
+<section id="process" class="section-alt" aria-labelledby="process-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 id="process-title">Five simple steps</h2>
+      <p>You approve every stage before we move on.</p>
+    </div>
+    <ol class="timeline reveal">
+      <li><strong>Request</strong><span>Fill in a short form</span></li>
+      <li><strong>Quote</strong><span>Get a fixed price within 2 business days</span></li>
+      <li><strong>Design</strong><span>Review and refine your look</span></li>
+      <li><strong>Build</strong><span>We build and test everything</span></li>
+      <li><strong>Launch</strong><span>Go live. It’s all yours.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== PRICING ========== -->
+<section id="pricing" aria-labelledby="pricing-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Pricing</p>
+      <h2 id="pricing-title">Clear prices. No surprises.</h2>
+      <p>Your written quote is final. We never add a fee you haven’t approved.</p>
+    </div>
+    <div class="grid grid-3">
+      <article class="card price-card reveal" aria-labelledby="tier-1">
+        <h3 id="tier-1" class="tier">Essential</h3>
+        <p class="price">$500 <span class="price-label">one-time</span></p>
+        <p class="price-monthly">+ $75<span> / month</span></p>
+        <p class="price-note">plus tax · 50% deposit</p>
+        <ul>
+          <li>Up to 5 pages</li>
+          <li>Custom, mobile-friendly design</li>
+          <li>2 rounds of revisions</li>
+          <li>30 days of free fixes</li>
+        </ul>
+        <a class="btn btn-outline" href="#request" aria-label="Choose Essential">Choose Essential</a>
+      </article>
+      <article class="card price-card featured reveal" style="--delay:.1s" aria-labelledby="tier-2">
+        <span class="badge">Our recommendation</span>
+        <h3 id="tier-2" class="tier">Signature</h3>
+        <p class="price">$750 <span class="price-label">one-time</span></p>
+        <p class="price-monthly">+ $75<span> / month</span></p>
+        <p class="price-note">plus tax · 50% deposit</p>
+        <ul>
+          <li>Up to 12 pages</li>
+          <li>Blog, booking or small store</li>
+          <li>3 rounds of revisions</li>
+          <li>60 days of free fixes</li>
+        </ul>
+        <a class="btn btn-primary" href="#request" aria-label="Choose Signature">Choose Signature</a>
+      </article>
+      <article class="card price-card reveal" style="--delay:.2s" aria-labelledby="tier-3">
+        <h3 id="tier-3" class="tier">Curated</h3>
+        <p class="price">$1,500 <span class="price-label">one-time</span></p>
+        <p class="price-monthly">+ $75<span> / month</span></p>
+        <p class="price-note">plus tax · 3 payments</p>
+        <ul>
+          <li>Full store or custom features</li>
+          <li>Content writing included</li>
+          <li>Unlimited revisions in timeline</li>
+          <li>90 days of free fixes</li>
+        </ul>
+        <a class="btn btn-outline" href="#request" aria-label="Choose Curated">Choose Curated</a>
+      </article>
+    </div>
+    <p class="pricing-foot reveal">The $75 monthly cost starts when your site goes live. Cancel anytime with one email.<br>Domain and hosting are paid directly to your provider at their prices. <a href="#faq-included">What’s included?</a></p>
+  </div>
+</section>
+
+<!-- ========== PROMISES ========== -->
+<section class="section-alt" aria-labelledby="promise-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Our standards</p>
+      <h2 id="promise-title">Honest by design</h2>
+    </div>
+    <div class="promises reveal">
+      <div class="promise"><div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0"/></svg></div><strong>You own it</strong><span>No lock-in, ever</span></div>
+      <div class="promise"><div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M5 9h14M12 9v12M8 21l4-7 4 7"/></svg></div><strong>Accessible</strong><span>Built to WCAG 2.2 AA</span></div>
+      <div class="promise"><div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></svg></div><strong>Private</strong><span>No trackers by default</span></div>
+      <div class="promise"><div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><strong>Real reviews</strong><span>Never paid or invented</span></div>
+      <div class="promise"><div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><strong>No pressure</strong><span>No fake countdowns</span></div>
+      <div class="promise"><div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h12M12 6l6 6-6 6"/></svg></div><strong>Easy exit</strong><span>Cancel with one email</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 id="faq-title">Good to know</h2>
+    </div>
+    <div class="faq reveal">
+      <details id="faq-included">
+        <summary>What isn’t included in the price?</summary>
+        <div class="answer">
+          <p>Only things you pay to other companies directly: your domain name, hosting, and any subscriptions you choose, such as a booking platform. We list the expected costs in your quote and never mark them up.</p>
+          <p>Work outside the agreed scope is quoted separately. It only goes ahead if you approve it in writing. There are no setup fees or admin fees.</p>
+          <p>The only recurring charge is the <strong>$75 monthly cost</strong> shown on every package. It starts when your site goes live, is billed once a month, and you can cancel it anytime by email with no cancellation fee.</p>
+        </div>
+      </details>
+      <details>
+        <summary>How long does it take?</summary>
+        <div class="answer"><p>It depends on the size of the project. Your quote includes a timeline with dates, so you know exactly when to expect each stage.</p></div>
+      </details>
+      <details>
+        <summary>Do I really own my website?</summary>
+        <div class="answer"><p>Yes. Once your final payment is made, the design, content and files are yours. We hand over every login. Fonts and plugins from other companies stay under their own licences, and we explain those to you.</p></div>
+      </details>
+      <details>
+        <summary>What if I change my mind?</summary>
+        <div class="answer"><p>Send us one email. If design work hasn’t started, you get a full refund if you cancel within 7 days of accepting your quote. After that, you only pay for work already done, and you keep that work. See our <a href="refunds.html">Refund Policy</a>.</p></div>
+      </details>
+      <details>
+        <summary>What do I need to provide?</summary>
+        <div class="answer"><p>Your logo if you have one, the text and photos you’d like to use, and your feedback at each stage. We can write content for you on the Curated package.</p></div>
+      </details>
+      <details>
+        <summary>What happens to my details?</summary>
+        <div class="answer"><p>We only use them to reply to you and prepare your quote. We never sell them, and you can ask us to delete them at any time. See our <a href="privacy.html">Privacy Policy</a> or <a href="data-requests.html">make a data request</a>.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== REQUEST FORM ========== -->
+<section id="request" class="section-alt" aria-labelledby="request-title">
+  <div class="container form-wrap">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Begin</p>
+      <h2 id="request-title">Request your website</h2>
+      <p>Three short steps. Free, with no obligation.</p>
+    </div>
+
+    <form id="request-form" class="form-card reveal" novalidate>
+      <ol class="form-progress" aria-label="Form progress">
+        <li class="active" aria-current="step">You</li>
+        <li>Project</li>
+        <li>Confirm</li>
+      </ol>
+
+      <!-- Step 1 -->
+      <div class="form-step" data-step="1">
+        <h3 class="step-title" tabindex="-1">About you</h3>
+        <p class="step-sub">So we know who to reply to.</p>
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required aria-required="true" aria-describedby="name-error">
+            <p class="error-msg" id="name-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" aria-describedby="email-error">
+            <p class="error-msg" id="email-error" role="alert"></p>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="phone">Phone <span class="opt">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="business">Business name <span class="opt">(optional)</span></label>
+            <input type="text" id="business" name="business" autocomplete="organization">
+          </div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="btn btn-primary" data-next>Continue <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="form-step" data-step="2" hidden>
+        <h3 class="step-title" tabindex="-1">Your project</h3>
+        <p class="step-sub">A few details help us quote accurately.</p>
+        <div class="field-row">
+          <div class="field">
+            <label for="site_type">Type of website <span class="req" aria-hidden="true">*</span></label>
+            <select id="site_type" name="site_type" required aria-required="true" aria-describedby="site_type-error">
+              <option value="">Choose one…</option>
+              <option>Business website</option>
+              <option>Online store</option>
+              <option>Booking site</option>
+              <option>Portfolio</option>
+              <option>Landing page</option>
+              <option>Redesign</option>
+              <option>Something else</option>
+            </select>
+            <p class="error-msg" id="site_type-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="package">Package <span class="opt">(optional)</span></label>
+            <select id="package" name="package">
+              <option value="">Not sure yet</option>
+              <option>Essential ($500 + $75/month)</option>
+              <option>Signature ($750 + $75/month)</option>
+              <option>Curated ($1,500 + $75/month)</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="details">Tell us about it <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="details" name="details" required aria-required="true" aria-describedby="details-hint details-error" placeholder="What does your business do, and what should the site include?"></textarea>
+          <span class="hint" id="details-hint">A few sentences is plenty.</span>
+          <p class="error-msg" id="details-error" role="alert"></p>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="current_url">Current website <span class="opt">(optional)</span></label>
+            <input type="url" id="current_url" name="current_url" placeholder="https://" aria-describedby="current_url-error">
+            <p class="error-msg" id="current_url-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="timeline">Launch timing <span class="opt">(optional)</span></label>
+            <select id="timeline" name="timeline">
+              <option value="">Flexible</option>
+              <option>Within 1 month</option>
+              <option>1–3 months</option>
+              <option>3+ months</option>
+            </select>
+          </div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="btn btn-outline" data-prev><span aria-hidden="true">←</span> Back</button>
+          <button type="button" class="btn btn-primary" data-next>Continue <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="form-step" data-step="3" hidden>
+        <h3 class="step-title" tabindex="-1">Almost done</h3>
+        <p class="step-sub">Two quick confirmations.</p>
+
+        <fieldset>
+          <legend>Will your site be aimed at children, or collect their data? <span class="req" aria-hidden="true">*</span></legend>
+          <div class="choice-row">
+            <div class="choice"><input type="radio" id="kids-no" name="audience_children" value="no" required aria-describedby="kids-no-error"><label for="kids-no">No</label></div>
+            <div class="choice"><input type="radio" id="kids-yes" name="audience_children" value="yes"><label for="kids-yes">Yes</label></div>
+            <div class="choice"><input type="radio" id="kids-unsure" name="audience_children" value="not sure"><label for="kids-unsure">Not sure</label></div>
+          </div>
+          <p class="error-msg" id="kids-no-error" role="alert"></p>
+          <p class="note" id="children-extra" hidden>We’ll build in parental consent and child-safe privacy settings to meet laws like COPPA and the UK Children’s Code.</p>
+        </fieldset>
+
+        <div class="check">
+          <input type="checkbox" id="age_confirm" name="age_confirm" value="yes" required aria-required="true" aria-describedby="age_confirm-error age-hint">
+          <label for="age_confirm">I am 18 or older. <span class="req" aria-hidden="true">*</span> <span class="hint" id="age-hint">If you’re under 18, please ask a parent or guardian to send this for you.</span></label>
+        </div>
+        <p class="error-msg" id="age_confirm-error" role="alert"></p>
+
+        <div class="check">
+          <input type="checkbox" id="privacy_consent" name="privacy_consent" value="yes" required aria-required="true" aria-describedby="privacy_consent-error">
+          <label for="privacy_consent">You may use my details to reply and prepare a quote, as described in the <a href="privacy.html">Privacy Policy</a>. <span class="req" aria-hidden="true">*</span></label>
+        </div>
+        <p class="error-msg" id="privacy_consent-error" role="alert"></p>
+
+        <div class="check">
+          <input type="checkbox" id="marketing_optin" name="marketing_optin" value="yes">
+          <label for="marketing_optin">Send me occasional studio news. <span class="opt">(Optional, at most monthly, unsubscribe anytime)</span></label>
+        </div>
+
+        <!-- Spam honeypot: hidden from people and screen readers -->
+        <div aria-hidden="true" style="position:absolute;left:-9999px">
+          <label for="website_hp">Leave this empty</label>
+          <input type="text" id="website_hp" name="website_hp" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="step-actions">
+          <button type="button" class="btn btn-outline" data-prev><span aria-hidden="true">←</span> Back</button>
+          <button type="submit" class="btn btn-primary">Send request</button>
+        </div>
+      </div>
+
+      <div class="form-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h2>Website Temptations</h2>
+        <!-- BUSINESS DETAILS — replace every highlighted placeholder before launch -->
+        <address>
+          <span class="placeholder">[Legal business name, e.g. Website Temptations LLC]</span><br>
+          <span class="placeholder">[Street address]</span><br>
+          <span class="placeholder">[City, State/Region, Postcode, Country]</span><br>
+          Business registration no.: <span class="placeholder">[number]</span><br>
+          Email: <a href="mailto:hello@example.com">hello@example.com</a><br>
+          Phone: <span class="placeholder">[phone number]</span><br>
+          Hours: Monday–Friday, 9:00–17:00 <span class="placeholder">[time zone]</span>
+        </address>
+      </div>
+      <div>
+        <h2>Legal</h2>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="refunds.html">Refund Policy</a></li>
+          <li><a href="cookies.html">Cookie Policy</a></li>
+          <li><button type="button" class="link-btn" data-open-cookie-settings>Cookie Settings</button></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Your Rights</h2>
+        <ul>
+          <li><a href="data-requests.html">Delete or Access My Data</a></li>
+          <li><a href="accessibility.html">Accessibility Statement</a></li>
+          <li><a href="credits.html">Licences &amp; Third Parties</a></li>
+          <li><a href="work.html">Our Work</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span data-year>2026</span> Website Temptations. All rights reserved.</p>
+      <p>No tracking · No hidden fees · No fake reviews</p>
+    </div>
+  </div>
+</footer>
+
+<section id="cookie-banner" class="cookie-banner" aria-labelledby="cookie-title" hidden>
+  <h2 id="cookie-title" tabindex="-1">Your cookie choices</h2>
+  <p>We only use what the site needs to work. Optional cookies stay <strong>off</strong> unless you turn them on. <a href="cookies.html">Cookie Policy</a></p>
+  <div id="cookie-prefs" class="cookie-prefs" hidden>
+    <div class="check">
+      <input type="checkbox" id="consent-necessary" checked disabled>
+      <label for="consent-necessary"><strong>Necessary</strong> (always on) <span class="hint">Remembers your cookie choice.</span></label>
+    </div>
+    <div class="check">
+      <input type="checkbox" id="consent-preferences">
+      <label for="consent-preferences"><strong>Preferences</strong> <span class="hint">Remembers your settings. Not currently used.</span></label>
+    </div>
+    <div class="check">
+      <input type="checkbox" id="consent-analytics">
+      <label for="consent-analytics"><strong>Analytics</strong> <span class="hint">Anonymous visit statistics. Not currently used.</span></label>
+    </div>
+    <p id="gpc-note" class="hint" hidden>Your browser sent a Global Privacy Control signal, so analytics stays off.</p>
+  </div>
+  <div class="btn-row">
+    <button type="button" class="btn btn-outline" data-cookie="reject">Reject all</button>
+    <button type="button" class="btn btn-outline" data-cookie="accept">Accept all</button>
+    <button type="button" class="btn btn-outline" data-cookie="customize">Customise</button>
+    <button type="button" class="btn btn-primary" data-cookie="save" hidden>Save my choices</button>
+  </div>
+</section>
+</body>
+</html>
