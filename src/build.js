@@ -1,6 +1,7 @@
 // Assembles src/pages/*.html into finished pages in the site root, wrapped in src/template.html.
 // Usage (from the website-temptations folder):  node src/build.js
 // Each page starts with:  <!-- title: Page Title | desc: Meta description | nav: services -->
+// Optional: | base: /   makes relative links start from the site root, so the page works at any URL (used by 404.html).
 // {{projects}} inserts every project from src/projects.json; {{projects:3}} inserts the newest 3.
 const fs = require("fs");
 const path = require("path");
@@ -45,6 +46,11 @@ for (const file of fs.readdirSync(pagesDir).filter(f => f.endsWith(".html"))) {
     .replace("{{desc}}", meta.desc || "")
     .replace(/\{\{nav:(\w+)\}\}/g, (_, k) => (k === meta.nav ? ' aria-current="page"' : ""))
     .replace("{{body}}", body);
-  fs.writeFileSync(path.join(root, file), out);
+  // Pages that can be shown at any URL (like 404.html) need links that start from the site root.
+  // Relative href/src values get the base prefix; #anchors, absolute URLs, mailto: and tel: are left alone.
+  const final = meta.base
+    ? out.replace(/\b(href|src)="(?![#/]|[a-z]+:)([^"]*)"/gi, (_, attr, url) => `${attr}="${meta.base}${url}"`)
+    : out;
+  fs.writeFileSync(path.join(root, file), final);
   console.log("built", file);
 }

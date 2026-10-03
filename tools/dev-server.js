@@ -16,7 +16,10 @@ http.createServer((req, res) => {
   const file = path.join(root, urlPath === "/" ? "index.html" : urlPath);
   if (!file.startsWith(root)) { res.writeHead(403); return res.end(); }
   fs.readFile(file, (err, data) => {
-    if (err) { res.writeHead(404); return res.end("Not found"); }
+    if (err) {  // same as Hostinger: show the branded 404 page
+      res.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
+      return fs.createReadStream(path.join(root, "404.html")).on("error", () => res.end("Not found")).pipe(res);
+    }
     res.writeHead(200, { "Content-Type": types[path.extname(file).toLowerCase()] || "application/octet-stream", "Cache-Control": "no-store" });
     res.end(data);
   });

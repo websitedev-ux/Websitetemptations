@@ -8,7 +8,39 @@ Run the local preview server:
 ```
 node tools/dev-server.js
 ```
-Then open http://localhost:5173. To publish, upload the whole folder (except `src/` and `tools/`) to any static host, such as Netlify, Cloudflare Pages, GitHub Pages or your own server.
+Then open http://localhost:5173.
+
+## Publishing to Hostinger (automatic)
+Every push to `main` on GitHub rebuilds the site and uploads it to Hostinger
+(`.github/workflows/deploy.yml`). Only the public files go up: the pages, `assets/`
+and `.htaccess`. `src/`, `tools/` and this README stay private.
+
+### One-time setup
+1. **Get your FTP details from Hostinger.** In hPanel, open **Websites → your site →
+   Files → FTP Accounts**. Note the **FTP IP/hostname**, the **FTP username** and the
+   **Directory**. If you don't know the password, click **Change FTP password** there.
+2. **Add them to GitHub.** In your repo, open **Settings → Secrets and variables → Actions**.
+   - On the **Secrets** tab, add `FTP_SERVER` (the hostname or IP), `FTP_USERNAME` and
+     `FTP_PASSWORD`. These are encrypted, and nobody (including Claude) can read them back.
+   - On the **Variables** tab, add `FTP_SERVER_DIR`, the folder to upload into:
+     - if the FTP account's Directory ends in `public_html`, use `./`
+     - otherwise use `public_html/` (the default if you skip this)
+3. **Clear Hostinger's placeholder page.** In hPanel's File Manager, delete `default.php`
+   from `public_html` (the `.htaccess` already prefers `index.html`, so this is just tidying up).
+4. **Deploy.** Push to `main`, or open the repo's **Actions** tab → **Deploy to Hostinger** →
+   **Run workflow**. The first upload sends everything. Later ones send only changed files.
+
+Until the three secrets are added, pushes still work. The deploy just skips itself with a
+warning in the Actions tab.
+
+### What `.htaccess` does on Hostinger
+- Forces HTTPS. Turn on Hostinger's free SSL first: hPanel → **Security → SSL**.
+- Shows `index.html` as the home page and the branded `404.html` for missing pages.
+- Adds security headers, hides dotfiles and folder listings, and sets sensible caching.
+
+### Uploading by hand instead
+Run `node src/build.js` then `node tools/package.js`, and upload the contents of the new
+`public/` folder into `public_html` with hPanel's File Manager.
 
 ## Before you launch: checklist
 1. **Business details.** Done. The footer shows your Gmail, phone and hours.
