@@ -3,10 +3,9 @@
 
 /* ===== CONFIG — edit these before going live ===== */
 const CONFIG = {
-  // Where form submissions are POSTed as JSON. Leave "" to fall back to the visitor's
-  // email app (mailto:). See README.md for options (your own server, Formspree, etc.).
-  // If you add a third-party form processor, list it in privacy.html → "Service providers".
-  formEndpoint: "",
+  // Where form submissions are POSTed as JSON. send-request.php runs on Hostinger and emails
+  // them to the address set inside it. Set to "" to fall back to the visitor's email app (mailto:).
+  formEndpoint: "send-request.php",
   contactEmail: "scottyshopstore@gmail.com",
   privacyEmail: "scottyshopstore@gmail.com",
   policyVersion: "2026-10-01"
@@ -251,13 +250,17 @@ function initForm(id, subject) {
           headers: { "Content-Type": "application/json", Accept: "application/json" },
           body: JSON.stringify({ form: id, ...data })
         });
+        if (res.status === 429) {
+          showStatus(status, "err", "You’ve sent a few requests in a row. Please wait a few minutes and try again.");
+          return;
+        }
         if (!res.ok) throw new Error(res.status);
         form.reset();
         if (form.goToStep) form.goToStep(0);
         initChildrenToggle();
         showStatus(status, "ok", "Thank you — your request was received. We reply within 2 business days.");
       } catch {
-        showStatus(status, "err", `Sorry, something went wrong sending your request. Please email us at ${CONFIG.contactEmail}.`);
+        showStatus(status, "err", `Sorry, something went wrong sending your request. Please email us at ${CONFIG.contactEmail} or try again shortly.`);
       } finally { btn.disabled = false; }
       return;
     }
@@ -274,7 +277,10 @@ function initForm(id, subject) {
   const clear = e => {
     const el = e.target;
     const group = el.type === "radio" ? form.querySelectorAll(`input[name="${el.name}"]`) : [el];
-    group.forEach(g => { if (g.getAttribute("aria-invalid") === "true" && g.checkValidity()) setError(form, g, ""); });
+    group.forEach(g => {
+      const digitsOk = !g.dataset.minDigits || g.value.replace(/\D/g, "").length >= Number(g.dataset.minDigits);
+      if (g.getAttribute("aria-invalid") === "true" && g.checkValidity() && digitsOk) setError(form, g, "");
+    });
   };
   form.addEventListener("input", clear);
   form.addEventListener("change", clear);
@@ -289,6 +295,8 @@ function validate(form) {
       if (el.validity.valueMissing) msg = el.type === "checkbox" ? "Please tick this box to continue." : el.type === "radio" ? "Please choose an option." : "This field is required.";
       else if (el.validity.typeMismatch) msg = el.type === "email" ? "Please enter a valid email address." : "Please enter a valid value.";
       else msg = el.validationMessage;
+    } else if (el.dataset.minDigits && el.value.replace(/\D/g, "").length < Number(el.dataset.minDigits)) {
+      msg = "Please enter a valid phone number.";
     }
     setError(form, el, msg);
     if (msg && !first) first = el;

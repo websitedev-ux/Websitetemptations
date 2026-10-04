@@ -13,9 +13,9 @@ fs.mkdirSync(out);
 
 const copy = rel => fs.cpSync(path.join(root, rel), path.join(out, rel), { recursive: true });
 
-// every built page in the site root, plus the server settings file
+// every built page in the site root, the form mailer (*.php) and the server settings file
 for (const f of fs.readdirSync(root)) {
-  if (f.endsWith(".html") || f === ".htaccess" || f === "robots.txt") copy(f);
+  if (f.endsWith(".html") || f.endsWith(".php") || f === ".htaccess" || f === "robots.txt") copy(f);
 }
 copy("assets");
 

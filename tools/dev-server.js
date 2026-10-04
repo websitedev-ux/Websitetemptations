@@ -13,6 +13,17 @@ const types = {
 
 http.createServer((req, res) => {
   const urlPath = decodeURIComponent(req.url.split("?")[0]);
+
+  // Local stand-in for send-request.php (there is no PHP here): prints the submission instead of emailing it.
+  if (urlPath === "/send-request.php" && req.method === "POST") {
+    let body = "";
+    req.on("data", c => (body += c)).on("end", () => {
+      console.log("\n[form submission, not emailed locally]\n" + body + "\n");
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({ ok: true, local: true }));
+    });
+    return;
+  }
   const file = path.join(root, urlPath === "/" ? "index.html" : urlPath);
   if (!file.startsWith(root)) { res.writeHead(403); return res.end(); }
   fs.readFile(file, (err, data) => {

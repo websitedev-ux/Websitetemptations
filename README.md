@@ -68,11 +68,12 @@ Run `node src/build.js` then `node tools/package.js`, and upload the *contents* 
    search for that address in `src/` and in the `CONFIG` block of `assets/main.js`.
 3. **Prices.** Set your real package prices in `src/pages/index.html`, in both the pricing
    cards and the package dropdown.
-4. **Form delivery.** By default the forms open the visitor's email app (mailto).
-   To receive submissions directly, set `CONFIG.formEndpoint` in `assets/main.js` to a
-   URL that accepts JSON POSTs. That can be your own server or a form service such as
-   Formspree or Basin. **If you use a third-party service, add it to the provider table
-   in `privacy.html` and to `credits.html`.**
+4. **Form delivery.** Done. Both forms post to `send-request.php`, which runs on Hostinger
+   and emails each submission to scottyshopstore@gmail.com (Reply goes straight to the
+   visitor). To change the inbox, edit `MAIL_TO` at the top of that file. Locally, the dev
+   server prints submissions in its terminal instead of emailing them.
+   If emails don't arrive, check Gmail's Spam folder first, then create the mailbox
+   `noreply@websitetemptations.com` in hPanel (Emails) so the sender address exists.
 5. **Legal review.** The policies are thorough templates, not legal advice. Have a lawyer
    check them for your country and state.
 6. **Refund percentages.** Adjust `refunds.html` to your real policy.
