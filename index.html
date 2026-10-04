@@ -21,8 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;600;700&display=swap">
-  <link rel="stylesheet" href="assets/styles.css">
-  <script src="assets/main.js" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=c48e5fe6">
+  <script src="assets/main.js?v=446b6a35" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -338,19 +338,12 @@
     <div class="section-head center reveal">
       <p class="eyebrow">Begin</p>
       <h2 id="request-title">Request your website</h2>
-      <p>Three short steps. Free, with no obligation.</p>
+      <p>One short form. Free, with no obligation.</p>
     </div>
 
     <form id="request-form" class="form-card reveal" novalidate>
-      <ol class="form-progress" aria-label="Form progress">
-        <li class="active" aria-current="step">You</li>
-        <li>Project</li>
-        <li>Confirm</li>
-      </ol>
-
-      <!-- Step 1 -->
-      <div class="form-step" data-step="1">
-        <h3 class="step-title" tabindex="-1">About you</h3>
+      <div class="form-section">
+        <h3 class="step-title">About you</h3>
         <p class="step-sub">So we know who to reply to, and how to reach you.</p>
         <div class="field-row">
           <div class="field">
@@ -376,14 +369,10 @@
             <input type="text" id="business" name="business" autocomplete="organization">
           </div>
         </div>
-        <div class="step-actions">
-          <button type="button" class="btn btn-primary" data-next>Continue <span aria-hidden="true">→</span></button>
-        </div>
       </div>
 
-      <!-- Step 2 -->
-      <div class="form-step" data-step="2" hidden>
-        <h3 class="step-title" tabindex="-1">Your project</h3>
+      <div class="form-section">
+        <h3 class="step-title">Your project</h3>
         <p class="step-sub">A few details help us quote accurately.</p>
         <div class="field-row">
           <div class="field">
@@ -436,15 +425,10 @@
             <p class="error-msg" id="timeline-error" role="alert"></p>
           </div>
         </div>
-        <div class="step-actions">
-          <button type="button" class="btn btn-outline" data-prev><span aria-hidden="true">←</span> Back</button>
-          <button type="button" class="btn btn-primary" data-next>Continue <span aria-hidden="true">→</span></button>
-        </div>
       </div>
 
-      <!-- Step 3 -->
-      <div class="form-step" data-step="3" hidden>
-        <h3 class="step-title" tabindex="-1">Almost done</h3>
+      <div class="form-section">
+        <h3 class="step-title">Almost done</h3>
         <p class="step-sub">Two quick confirmations.</p>
 
         <fieldset>
@@ -482,7 +466,6 @@
         </div>
 
         <div class="step-actions">
-          <button type="button" class="btn btn-outline" data-prev><span aria-hidden="true">←</span> Back</button>
           <button type="submit" class="btn btn-primary">Send request</button>
         </div>
       </div>

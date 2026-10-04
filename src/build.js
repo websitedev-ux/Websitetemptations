@@ -10,6 +10,11 @@ const root = path.join(__dirname, "..");
 const template = fs.readFileSync(path.join(__dirname, "template.html"), "utf8");
 const pagesDir = path.join(__dirname, "pages");
 const projects = JSON.parse(fs.readFileSync(path.join(__dirname, "projects.json"), "utf8"));
+const crypto = require("crypto");
+
+// Add ?v=<content hash> to the stylesheet and script so browsers fetch the new version after every change.
+const version = rel => crypto.createHash("md5").update(fs.readFileSync(path.join(root, rel))).digest("hex").slice(0, 8);
+const assetVersions = { "assets/styles.css": version("assets/styles.css"), "assets/main.js": version("assets/main.js") };
 
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const domain = url => new URL(url).hostname.replace(/^www\./, "");
@@ -45,7 +50,8 @@ for (const file of fs.readdirSync(pagesDir).filter(f => f.endsWith(".html"))) {
     .replace("{{title}}", meta.title || "Website Temptations")
     .replace("{{desc}}", meta.desc || "")
     .replace(/\{\{nav:(\w+)\}\}/g, (_, k) => (k === meta.nav ? ' aria-current="page"' : ""))
-    .replace("{{body}}", body);
+    .replace("{{body}}", body)
+    .replace(/(href|src)="(assets\/(?:styles\.css|main\.js))"/g, (_, attr, rel) => `${attr}="${rel}?v=${assetVersions[rel]}"`);
   // Pages that can be shown at any URL (like 404.html) need links that start from the site root.
   // Relative href/src values get the base prefix; #anchors, absolute URLs, mailto: and tel: are left alone.
   const final = meta.base

@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initNav();
   initYear();
   initCookieConsent();
-  initSteps("request-form");
   initPackageButtons();
   initForm("request-form", "Website request");
   initForm("privacy-form", "Privacy / data request");
@@ -80,39 +79,6 @@ function initPackageButtons() {
     select.value = btn.dataset.package;
     select.dispatchEvent(new Event("change", { bubbles: true }));
   }));
-}
-
-/* ---------- Multi-step form: one short section at a time ---------- */
-function initSteps(id) {
-  const form = document.getElementById(id);
-  if (!form) return;
-  const steps = [...form.querySelectorAll(".form-step")];
-  const markers = [...form.querySelectorAll(".form-progress li")];
-  if (!steps.length) return;
-  let current = 0;
-
-  const go = i => {
-    current = i;
-    steps.forEach((s, n) => (s.hidden = n !== i));
-    markers.forEach((m, n) => {
-      m.classList.toggle("done", n < i);
-      m.classList.toggle("active", n === i);
-      if (n === i) m.setAttribute("aria-current", "step"); else m.removeAttribute("aria-current");
-    });
-    const heading = steps[i].querySelector(".step-title");
-    if (heading) heading.focus();
-    announce(`Step ${i + 1} of ${steps.length}`);
-  };
-
-  form.addEventListener("click", e => {
-    if (e.target.closest("[data-next]")) {
-      const bad = validate(steps[current]);
-      if (bad) { bad.focus(); return; }
-      go(current + 1);
-    }
-    if (e.target.closest("[data-prev]")) go(current - 1);
-  });
-  form.goToStep = go;
 }
 
 function initYear() {
@@ -267,7 +233,6 @@ function initForm(id, subject) {
         }
         if (!res.ok) throw new Error(res.status);
         form.reset();
-        if (form.goToStep) form.goToStep(0);
         initChildrenToggle();
         showStatus(status, "ok", "Thank you — your request was received. We reply within 2 business days.");
       } catch {
@@ -325,4 +290,6 @@ function showStatus(el, type, msg) {
   if (!el) return;
   el.className = `form-status show ${type}`;
   el.textContent = msg;
+  // keep the visitor on this page, with the result in view right under the Send button
+  el.scrollIntoView({ behavior: REDUCED_MOTION ? "auto" : "smooth", block: "nearest" });
 }
