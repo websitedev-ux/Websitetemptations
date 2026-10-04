@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initYear();
   initCookieConsent();
   initSteps("request-form");
+  initPackageButtons();
   initForm("request-form", "Website request");
   initForm("privacy-form", "Privacy / data request");
   initChildrenToggle();
@@ -69,6 +70,16 @@ function initReveal() {
     if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
   }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
   els.forEach(el => io.observe(el));
+}
+
+/* ---------- "Choose <package>" buttons pre-select that package in the request form ---------- */
+function initPackageButtons() {
+  const select = document.getElementById("package");
+  if (!select) return;
+  document.querySelectorAll("[data-package]").forEach(btn => btn.addEventListener("click", () => {
+    select.value = btn.dataset.package;
+    select.dispatchEvent(new Event("change", { bubbles: true }));
+  }));
 }
 
 /* ---------- Multi-step form: one short section at a time ---------- */

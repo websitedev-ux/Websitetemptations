@@ -169,7 +169,7 @@
           <li>2 rounds of revisions</li>
           <li>30 days of free fixes</li>
         </ul>
-        <a class="btn btn-outline" href="#request" aria-label="Choose Essential">Choose Essential</a>
+        <a class="btn btn-outline" href="#request" data-package="Essential ($500 + $75/month)">Choose Essential</a>
       </article>
       <article class="card price-card featured reveal" style="--delay:.1s" aria-labelledby="tier-2">
         <span class="badge">Our recommendation</span>
@@ -183,7 +183,7 @@
           <li>3 rounds of revisions</li>
           <li>60 days of free fixes</li>
         </ul>
-        <a class="btn btn-primary" href="#request" aria-label="Choose Signature">Choose Signature</a>
+        <a class="btn btn-primary" href="#request" data-package="Signature ($750 + $75/month)">Choose Signature</a>
       </article>
       <article class="card price-card reveal" style="--delay:.2s" aria-labelledby="tier-3">
         <h3 id="tier-3" class="tier">Curated</h3>
@@ -196,7 +196,7 @@
           <li>Unlimited revisions in timeline</li>
           <li>90 days of free fixes</li>
         </ul>
-        <a class="btn btn-outline" href="#request" aria-label="Choose Curated">Choose Curated</a>
+        <a class="btn btn-outline" href="#request" data-package="Curated ($1,500 + $75/month)">Choose Curated</a>
       </article>
     </div>
     <p class="pricing-foot reveal">The $75 monthly cost starts when your site goes live. Cancel anytime with one email.<br>Domain and hosting are paid directly to your provider at their prices. <a href="#faq-included">What’s included?</a></p>
@@ -330,13 +330,15 @@
             <p class="error-msg" id="site_type-error" role="alert"></p>
           </div>
           <div class="field">
-            <label for="package">Package <span class="opt">(optional)</span></label>
-            <select id="package" name="package">
-              <option value="">Not sure yet</option>
+            <label for="package">Package <span class="req" aria-hidden="true">*</span></label>
+            <select id="package" name="package" required aria-required="true" aria-describedby="package-error">
+              <option value="">Choose one…</option>
               <option>Essential ($500 + $75/month)</option>
               <option>Signature ($750 + $75/month)</option>
               <option>Curated ($1,500 + $75/month)</option>
+              <option>Not sure yet</option>
             </select>
+            <p class="error-msg" id="package-error" role="alert"></p>
           </div>
         </div>
         <div class="field">

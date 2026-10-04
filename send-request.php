@@ -91,7 +91,7 @@ if (field($data, 'privacy_consent') !== 'yes') { $errors[] = 'privacy_consent'; 
 if ($form === 'request-form') {
     $phone = oneLine(field($data, 'phone', 25));
     if (strlen(preg_replace('/\D/', '', $phone)) < 7) { $errors[] = 'phone'; }
-    foreach (['site_type', 'details', 'timeline', 'audience_children'] as $req) {
+    foreach (['site_type', 'package', 'details', 'timeline', 'audience_children'] as $req) {
         if (field($data, $req, 5000) === '') { $errors[] = $req; }
     }
     if (field($data, 'age_confirm') !== 'yes') { $errors[] = 'age_confirm'; }
